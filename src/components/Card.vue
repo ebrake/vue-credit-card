@@ -177,7 +177,7 @@ export default {
       return {
         number: value.number,
         name: value.name,
-        expiry: value.expiry.replace(/(\s+)/g, ''),
+        expiry: value.expiry ? value.expiry.replace(/(\s+)/g, '') : value.expiry,
         cvc: value.cvc
       }
     }
