@@ -122,10 +122,12 @@ export default {
       isIE11: false,
       cardType: null,
       options: {
-        ...options,
-        placeholders: {
-          ...options.placeholders,
-          ...this.placeholder
+        options,
+        placeholders: function() {
+          if (this.placeholders) {
+            return this.placeholders;
+          }
+          return options.placeholders;
         }
       },
       stateCard,
